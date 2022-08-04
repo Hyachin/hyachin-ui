@@ -1,6 +1,6 @@
 # hyachin-ui
 ## 搭建指南（同步更新中...）
-https://www.yuque.com/yichengshanlu-xeghf/czce40/qrqxke/edit
+https://www.yuque.com/yichengshanlu-xeghf/czce40/qrqxke
 ## Project setup
 
 ```
