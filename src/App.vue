@@ -1,25 +1,17 @@
 <template>
   <div id="app">
     <hy-button type="primary" @click="visible = true">显示</hy-button>
-    <hy-dialog :visible.sync="visible">
+    <hy-dialog :visible.sync="visible" title="文字标题">
+      <!-- 以下为slot，和title属性二选一 -->
+      <!-- <template v-slot:header>
+        <h3>自定义标题</h3>
+      </template> -->
       内容
       <template v-slot:footer>
         <hy-button @click="visible = false">取消</hy-button>
         <hy-button type="primary" @click="visible = false">确定</hy-button>
       </template>
     </hy-dialog>
-    <!-- <hy-dialog width="30%" top="100px">
-      <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-      </ul>
-    </hy-dialog> -->
-    <!-- <hy-dialog>
-      <template v-slot:title>
-        <h3>自定义标题</h3>
-      </template>
-    </hy-dialog> -->
   </div>
 </template>
 
@@ -30,12 +22,6 @@ export default {
     return {
       visible: false,
     };
-  },
-  methods: {
-    // close(value) {
-    //   console.log("123");
-    //   this.visible = value;
-    // },
   },
 };
 </script>
