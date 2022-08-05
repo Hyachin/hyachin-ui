@@ -1,17 +1,21 @@
 <template>
   <div id="app">
-    <hy-button type="primary" @click="visible = true">显示</hy-button>
-    <hy-dialog :visible.sync="visible" title="文字标题">
-      <!-- 以下为slot，和title属性二选一 -->
-      <!-- <template v-slot:header>
-        <h3>自定义标题</h3>
-      </template> -->
-      内容
-      <template v-slot:footer>
-        <hy-button @click="visible = false">取消</hy-button>
-        <hy-button type="primary" @click="visible = false">确定</hy-button>
-      </template>
-    </hy-dialog>
+    <hy-input
+      placeholder="请输入用户名"
+      type="password"
+      name="username"
+      disabled
+      clearable
+      show-password
+    ></hy-input>
+    <hy-input
+      v-model="username"
+      type="password"
+      showPassword
+      @blur="handleBlur"
+      @change="handleChange"
+      @focus="handleFocus"
+    ></hy-input>
   </div>
 </template>
 
@@ -20,16 +24,27 @@ export default {
   name: "App",
   data() {
     return {
-      visible: false,
+      username: "zs",
     };
+  },
+  methods: {
+    handleBlur() {
+      console.log("do something when blur");
+    },
+    handleChange() {
+      console.log("do something when change");
+    },
+    handleFocus() {
+      console.log("do something when focus");
+    },
   },
 };
 </script>
 
-<style lang="scss" scoped>
-.row {
-  .hy-button {
-    margin: 10px;
+<style lang="scss">
+#app {
+  .hy-input {
+    width: 200px;
   }
 }
 </style>

@@ -123,3 +123,78 @@ npm run serve
 | —      | Dialog 的内容           |
 | title  | Dialog 标题区的内容     |
 | footer | Dialog 按钮操作区的内容 |
+
+### Input
+
+#### basic use
+
+```html
+<template>
+  <div id="app">
+    <hy-input
+      placeholder="请输入用户名"
+      type="password"
+      name="username"
+      disabled
+      clearable
+      show-password
+    ></hy-input>
+    <hy-input
+      v-model="username"
+      type="password"
+      showPassword
+      @blur="handleBlur"
+      @change="handleChange"
+      @focus="handleFocus"
+    ></hy-input>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "App",
+    data() {
+      return {
+        username: "zs",
+      };
+    },
+    methods: {
+      handleBlur() {
+        console.log("do something when blur");
+      },
+      handleChange() {
+        console.log("do something when change");
+      },
+      handleFocus() {
+        console.log("do something when focus");
+      },
+    },
+  };
+</script>
+<style lang="scss">
+  #app {
+    .hy-input {
+      width: 200px;
+    }
+  }
+</style>
+```
+
+#### Attributes
+
+| 参数          | 说明                 | 类型    | 可选值                                                                                                                     | 默认值 |
+| :------------ | :------------------- | :------ | :------------------------------------------------------------------------------------------------------------------------- | :----- |
+| placeholder   | 输入框占位文本       | string  | —                                                                                                                          | —      |
+| type          | 类型                 | string  | text 和[其他原生 input 的 type 值](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types) | text   |
+| disabled      | 禁用                 | boolean | —                                                                                                                          | false  |
+| clearable     | 是否可清空           | boolean | —                                                                                                                          | false  |
+| show-password | 是否显示切换密码图标 | boolean | —                                                                                                                          | false  |
+| name          | 原生属性             | string  | —                                                                                                                          | —      |
+
+#### Events
+
+| 事件名称 | 说明                                   | 回调参数       |
+| :------- | :------------------------------------- | :------------- |
+| blur     | 在 Input 失去焦点时触发                | (event: Event) |
+| focus    | 在 Input 获得焦点时触发                | (event: Event) |
+| change   | 仅在输入框失去焦点或用户按下回车时触发 | (event: Event) |
