@@ -2,7 +2,7 @@
 
 ## Teach you how to code by youself（notes updating synchronously...）
 
-https://www.yuque.com/docs/share/4cdc9c90-aac4-48fd-b5f2-28267609aa06?# 《hyachin-ui搭建指南》
+https://www.yuque.com/docs/share/4cdc9c90-aac4-48fd-b5f2-28267609aa06?# 《hyachin-ui 搭建指南》
 
 ## Project setup
 
@@ -248,3 +248,36 @@ npm run serve
 | 事件名称 | 说明                            | 回调参数   |
 | :------- | :------------------------------ | :--------- |
 | change   | switch 状态发生变化时的回调函数 | 新状态的值 |
+
+### Radio
+
+#### basic use
+
+```html
+<template>
+  <div id="app">
+    <hy-radio label="1" v-model="gender">男</hy-radio>
+    <hy-radio label="0" v-model="gender">女</hy-radio>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "App",
+    data() {
+      return {
+        gender: "1",
+      };
+    },
+    methods: {},
+  };
+</script>
+```
+
+#### Attributes
+
+| 参数    | 说明           | 类型                      | 可选值 | 默认值 |
+| :------ | :------------- | :------------------------ | :----- | :----- |
+| v-model | 双向绑定       | string / number / boolean | —      | —      |
+| label   | Radio 的 value | string / number / boolean | —      | —      |
+| name    | 原生 name 属性 | string                    | —      | —      |

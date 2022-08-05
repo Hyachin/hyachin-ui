@@ -1,12 +1,7 @@
 <template>
   <div id="app">
-    <hy-switch v-model="active" :name="username"></hy-switch>
-    <hy-switch
-      v-model="active"
-      inactiveColor="green"
-      activeColor="red"
-      @change="handleChange"
-    ></hy-switch>
+    <hy-radio label="1" v-model="gender">男</hy-radio>
+    <hy-radio label="0" v-model="gender">女</hy-radio>
   </div>
 </template>
 
@@ -15,15 +10,10 @@ export default {
   name: "App",
   data() {
     return {
-      active: false,
-      username: "zs",
+      gender: "1",
     };
   },
-  methods: {
-    handleChange(val) {
-      console.log("do something when change", val);
-    },
-  },
+  methods: {},
 };
 </script>
 
