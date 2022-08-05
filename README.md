@@ -2,7 +2,7 @@
 
 ## Teach you how to code by youself（notes updating synchronously...）
 
-https://www.yuque.com/yichengshanlu-xeghf/czce40/qrqxke
+https://www.yuque.com/docs/share/4cdc9c90-aac4-48fd-b5f2-28267609aa06?# 《hyachin-ui搭建指南》
 
 ## Project setup
 
