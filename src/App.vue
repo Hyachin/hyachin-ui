@@ -1,21 +1,12 @@
 <template>
   <div id="app">
-    <hy-input
-      placeholder="请输入用户名"
-      type="password"
-      name="username"
-      disabled
-      clearable
-      show-password
-    ></hy-input>
-    <hy-input
-      v-model="username"
-      type="password"
-      showPassword
-      @blur="handleBlur"
+    <hy-switch v-model="active" :name="username"></hy-switch>
+    <hy-switch
+      v-model="active"
+      inactiveColor="green"
+      activeColor="red"
       @change="handleChange"
-      @focus="handleFocus"
-    ></hy-input>
+    ></hy-switch>
   </div>
 </template>
 
@@ -24,27 +15,16 @@ export default {
   name: "App",
   data() {
     return {
+      active: false,
       username: "zs",
     };
   },
   methods: {
-    handleBlur() {
-      console.log("do something when blur");
-    },
-    handleChange() {
-      console.log("do something when change");
-    },
-    handleFocus() {
-      console.log("do something when focus");
+    handleChange(val) {
+      console.log("do something when change", val);
     },
   },
 };
 </script>
 
-<style lang="scss">
-#app {
-  .hy-input {
-    width: 200px;
-  }
-}
-</style>
+<style lang="scss"></style>

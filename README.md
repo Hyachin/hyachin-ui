@@ -198,3 +198,53 @@ npm run serve
 | blur     | 在 Input 失去焦点时触发                | (event: Event) |
 | focus    | 在 Input 获得焦点时触发                | (event: Event) |
 | change   | 仅在输入框失去焦点或用户按下回车时触发 | (event: Event) |
+
+### Switch
+
+#### basic use
+
+```html
+<template>
+  <div id="app">
+    <hy-switch v-model="active" :name="username"></hy-switch>
+    <hy-switch
+      v-model="active"
+      inactiveColor="green"
+      activeColor="red"
+      @change="handleChange"
+    ></hy-switch>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "App",
+    data() {
+      return {
+        active: false,
+        username: "zs",
+      };
+    },
+    methods: {
+      handleChange(val) {
+        console.log("do something when change", val);
+      },
+    },
+  };
+</script>
+```
+
+#### Attributes
+
+| 参数          | 说明                    | 类型   | 可选值 | 默认值  |
+| :------------ | :---------------------- | :----- | :----- | :------ |
+| v-model       | 绑定值                  | string | —      | —       |
+| name          | switch 对应的 name 属性 | string | —      | —       |
+| activeColor   | switch 打开时的背景色   | string | —      | #409eff |
+| inactiveColor | switch 关闭时的背景色   | string | —      | #dcdfe6 |
+
+#### Events
+
+| 事件名称 | 说明                            | 回调参数   |
+| :------- | :------------------------------ | :--------- |
+| change   | switch 状态发生变化时的回调函数 | 新状态的值 |
