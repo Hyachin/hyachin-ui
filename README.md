@@ -364,3 +364,52 @@ npm run serve
 | 参数    | 说明     | 类型  | 可选值 | 默认值 |
 | :------ | :------- | :---- | :----- | :----- |
 | v-model | 双向绑定 | array | —      | []     |
+
+### Form&FormItem
+
+#### basic use
+
+```html
+<template>
+  <div id="app">
+    <hy-form :model="model" label-width="100px">
+      <hy-form-item label="用户名">
+        <hy-input
+          placeholder="请输入用户名"
+          v-model="model.username"
+        ></hy-input>
+      </hy-form-item>
+      <hy-form-item label="选择">
+        <hy-switch v-model="model.active"></hy-switch>
+      </hy-form-item>
+    </hy-form>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "App",
+    data() {
+      return {
+        model: {
+          username: "zs",
+          active: true,
+        },
+      };
+    },
+  };
+</script>
+```
+
+#### Form Attributes
+
+| 参数        | 说明             | 类型   | 可选值 | 默认值 |
+| :---------- | :--------------- | :----- | :----- | :----- |
+| model       | 表单数据对象     | object | —      | —      |
+| label-width | 表单域标签的宽度 | string | —      | —      |
+
+#### FormItem Attributes
+
+| 参数  | 说明     | 类型   | 可选值 | 默认值 |
+| :---- | :------- | :----- | :----- | :----- |
+| label | 标签文本 | string | —      | —      |
