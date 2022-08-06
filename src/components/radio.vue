@@ -19,6 +19,11 @@
 <script>
 export default {
   name: "HyRadio",
+  inject: {
+    RadioGroup: {
+      default: "",
+    },
+  },
   props: {
     label: {
       type: [String, Number, Boolean],
@@ -37,11 +42,16 @@ export default {
   computed: {
     model: {
       get() {
-        return this.value;
+        return this.isGroup ? this.RadioGroup.value : this.value;
       },
       set(value) {
-        this.$emit("input", value);
+        this.isGroup
+          ? this.RadioGroup.$emit("input", value)
+          : this.$emit("input", value);
       },
+    },
+    isGroup() {
+      return !!this.RadioGroup;
     },
   },
 };

@@ -281,3 +281,22 @@ npm run serve
 | v-model | 双向绑定       | string / number / boolean | —      | —      |
 | label   | Radio 的 value | string / number / boolean | —      | —      |
 | name    | 原生 name 属性 | string                    | —      | —      |
+
+### RadioGroup
+
+在 RadioGroup 上写 v-model，可将绑定的值作用于其包裹的所有 radio
+
+#### basic use
+
+```html
+<hy-radio-group v-model="gender">
+  <hy-radio label="1">男</hy-radio>
+  <hy-radio label="0">女</hy-radio>
+</hy-radio-group>
+```
+
+#### Attributes
+
+| 参数    | 说明     | 类型                      | 可选值 | 默认值 |
+| :------ | :------- | :------------------------ | :----- | :----- |
+| v-model | 双向绑定 | string / number / boolean | —      | —      |
