@@ -1,5 +1,5 @@
 # 忽略目录
-examples/
+src/
 packages/
 public/
 # 忽略指定文件

@@ -28,7 +28,7 @@ yarn add hyachin-ui
 
 ```js
 import HyachinUI from "hyachin-ui";
-import "hyahcin/lib/hyachin.css";
+import "hyahcin/dist/hyachin-ui.css";
 Vue.use(HyachinUI);
 ```
 
