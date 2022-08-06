@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <hy-radio-group v-model="gender">
-      <hy-radio label="1">男</hy-radio>
-      <hy-radio label="0">女</hy-radio>
-    </hy-radio-group>
-    <hy-radio label="1" v-model="gender">男</hy-radio>
-    <hy-radio label="0" v-model="gender">女</hy-radio>
+    <hy-checkbox v-model="active">是否选中</hy-checkbox>
+    <hy-checkbox-group v-model="fruits">
+      <hy-checkbox label="apple"></hy-checkbox>
+      <hy-checkbox label="banana"></hy-checkbox>
+      <hy-checkbox label="peach"></hy-checkbox>
+    </hy-checkbox-group>
   </div>
 </template>
 
@@ -14,7 +14,8 @@ export default {
   name: "App",
   data() {
     return {
-      gender: "1",
+      active: true,
+      fruits: ["apple"],
     };
   },
   methods: {},

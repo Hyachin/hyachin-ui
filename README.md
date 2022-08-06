@@ -300,3 +300,67 @@ npm run serve
 | 参数    | 说明     | 类型                      | 可选值 | 默认值 |
 | :------ | :------- | :------------------------ | :----- | :----- |
 | v-model | 双向绑定 | string / number / boolean | —      | —      |
+
+### Checkbox
+
+#### basic use
+
+```html
+<template>
+  <div id="app">
+    <hy-checkbox v-model="active">是否选中</hy-checkbox>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "App",
+    data() {
+      return {
+        active: true,
+      };
+    },
+  };
+</script>
+```
+
+#### Attributes
+
+| 参数    | 说明              | 类型    | 可选值 | 默认值 |
+| :------ | :---------------- | :------ | :----- | :----- |
+| v-model | 双向绑定          | boolean | —      | false  |
+| label   | Checkbox 的 value | string  | —      | —      |
+| name    | 原生 name 属性    | string  | —      | —      |
+
+### CheckboxGroup
+
+#### basic use
+
+```html
+<template>
+  <div id="app">
+    <hy-checkbox-group v-model="fruits">
+      <hy-checkbox label="apple"></hy-checkbox>
+      <hy-checkbox label="banana"></hy-checkbox>
+      <hy-checkbox label="peach"></hy-checkbox>
+    </hy-checkbox-group>
+  </div>
+</template>
+
+<script>
+  export default {
+    name: "App",
+    data() {
+      return {
+        fruits: ["apple"],
+      };
+    },
+  };
+</script>
+```
+
+#### Attributes
+
+| 参数    | 说明     | 类型  | 可选值 | 默认值 |
+| :------ | :------- | :---- | :----- | :----- |
+| v-model | 双向绑定 | array | —      | []     |
