@@ -18,6 +18,20 @@ npm run serve
 
 ## Use Hyachin-UI
 
+### 安装组件库
+
+```js
+yarn add hyachin-ui
+```
+
+### 全局导入
+
+```js
+import HyachinUI from "hyachin-ui";
+import "hyahcin/lib/hyachin.css";
+Vue.use(HyachinUI);
+```
+
 ### Button
 
 #### Basic usage
